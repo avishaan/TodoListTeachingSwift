@@ -45,6 +45,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
   }
   
+  @IBAction func addButtonTapped(sender: UIBarButtonItem) {
+    self.performSegueWithIdentifier("showTaskAdd", sender: self)
+  }
   // UITableViewDataSource
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return taskArray.count
@@ -64,8 +67,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   // UITableViewDelegate
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     // when we tap a specific row in the table view
-    
-    println(indexPath.row)
     
     performSegueWithIdentifier("showTaskDetail", sender: self)
 

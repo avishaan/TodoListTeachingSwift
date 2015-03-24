@@ -106,6 +106,9 @@
                                 <state key="normal" title="Add Task">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addTaskButtonTapped:" destination="WSl-vN-Wdk" eventType="touchUpInside" id="hrr-bh-HKz"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C16-97-u6n">
                                 <rect key="frame" x="16" y="124" width="288" height="30"/>
@@ -145,6 +148,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="dueDatePicker" destination="Jep-8z-g7B" id="35b-TM-sp3"/>
+                        <outlet property="subtaskTextField" destination="Qaf-zJ-ynb" id="fye-7R-FF2"/>
+                        <outlet property="taskTextField" destination="C16-97-u6n" id="MZl-7R-ay1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="by3-fm-C3y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,7 +213,11 @@
                                 <action selector="cancelButtonTapped:" destination="BNM-kD-EL2" id="8XZ-SR-tjE"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="ujk-Ur-ERb"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="ujk-Ur-ERb">
+                            <connections>
+                                <action selector="DoneButtonPressed:" destination="BNM-kD-EL2" id="04S-lz-qDl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>

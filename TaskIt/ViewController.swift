@@ -114,6 +114,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       return "Completed"
     }
   }
+  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    
+    let thisTask = baseArray[indexPath.section][indexPath.row]
+    if indexPath.section == 0 {
+      var newTask = TaskModel(task: thisTask.task, subtask: thisTask.subtask, date: thisTask.date, completed: true)
+      baseArray[1].append(newTask)
+    } else {
+      var newTask = TaskModel(task: thisTask.task, subtask: thisTask.subtask, date: thisTask.date, completed: false)
+      baseArray[0].append(newTask)
+    }
+    baseArray[indexPath.section].removeAtIndex(indexPath.row)
+    tableView.reloadData()
+  }
 
 }
 

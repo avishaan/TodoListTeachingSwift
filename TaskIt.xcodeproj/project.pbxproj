@@ -18,6 +18,7 @@
 		823C2B211AC1F10400C6BE63 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C2B201AC1F10400C6BE63 /* TaskDetailViewController.swift */; };
 		823C2B231AC206F400C6BE63 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C2B221AC206F400C6BE63 /* Date.swift */; };
 		823C2B251AC20C4F00C6BE63 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C2B241AC20C4F00C6BE63 /* AddTaskViewController.swift */; };
+		823C2B271AC316AA00C6BE63 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823C2B261AC316AA00C6BE63 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		823C2B201AC1F10400C6BE63 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		823C2B221AC206F400C6BE63 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		823C2B241AC20C4F00C6BE63 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		823C2B261AC316AA00C6BE63 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				823C2B271AC316AA00C6BE63 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +108,7 @@
 		823C2AFA1AC0C6F000C6BE63 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				823C2B261AC316AA00C6BE63 /* CoreData.framework */,
 				823C2AFB1AC0C6F000C6BE63 /* Info.plist */,
 			);
 			name = "Supporting Files";

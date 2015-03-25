@@ -7,17 +7,25 @@
 //
 
 import UIKit
+import CoreData
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
 
   @IBOutlet weak var tableView: UITableView!
   
+  let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+  // way to manage updates to table view
+  var fetchedResultsController:NSFetchedResultsController = NSFetchedResultsController()
   // holds array of completed and uncompleted tasks
   var baseArray:[[TaskModel]] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup
+    
+    fetchedResultsController = getFetchResultsController()
+    fetchedResultsController.delegate = self
+    fetchedResultsController.performFetch(nil)
   }
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
@@ -113,6 +121,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     baseArray[indexPath.section].removeAtIndex(indexPath.row)
     tableView.reloadData()
+  }
+  
+  // Helper
+  
+  // returns NSFetched Request with sort
+  func taskFetchRequest() -> NSFetchRequest {
+    let fetchRequest = NSFetchRequest(entityName: "TaskModel")
+    let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+    fetchRequest.sortDescriptors = [sortDescriptor]
+    return fetchRequest
+  }
+  
+  func getFetchResultsController() -> NSFetchedResultsController {
+    fetchedResultsController = NSFetchedResultsController(fetchRequest: taskFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
   }
 
 }

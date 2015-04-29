@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreData
-
+@objc(TaskModel)
 class TaskModel: NSManagedObject {
 
     @NSManaged var completed: NSNumber

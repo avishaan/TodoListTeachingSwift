@@ -108,10 +108,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     
     let thisTask = fetchedResultsController.objectAtIndexPath(indexPath) as TaskModel
-    if indexPath.section == 0 {
-      thisTask.completed = true
-    } else {
+    // flip completion instead of checking the section the item is in
+    if thisTask.completed == true {
       thisTask.completed = false
+    } else {
+      thisTask.completed = true
     }
     (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
   }

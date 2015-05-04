@@ -85,6 +85,25 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         }
       }
       return capitalizeCell
+    } else {
+      // this means it is not capitalizeTableView, must be completeNewTodoTableView
+      var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("completeNewTodoCell") as UITableViewCell
+      if indexPath.row == 0 {
+        cell.textLabel?.text = "Do not complete Task"
+        if NSUserDefaults.standardUserDefaults().boolForKey(kShouldCompleteNewTodoKey) == false {
+          cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        } else {
+          cell.accessoryType = UITableViewCellAccessoryType.None
+        }
+      } else {
+        cell.textLabel?.text = "Complete Task"
+        if NSUserDefaults.standardUserDefaults().boolForKey(kShouldCompleteNewTodoKey) == true {
+          cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        } else {
+          cell.accessoryType = UITableViewCellAccessoryType.None
+        }
+      }
+      return cell
     }
   }
   

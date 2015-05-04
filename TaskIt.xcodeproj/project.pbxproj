@@ -20,6 +20,7 @@
 		823C2B271AC316AA00C6BE63 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823C2B261AC316AA00C6BE63 /* CoreData.framework */; };
 		823C2B2D1AC31C3C00C6BE63 /* TaskItModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 823C2B2B1AC31C3C00C6BE63 /* TaskItModel.xcdatamodeld */; };
 		823C2B2F1AC31CF300C6BE63 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C2B2E1AC31CF300C6BE63 /* TaskModel.swift */; };
+		82E131BA1AF6F5B00036728A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E131B91AF6F5B00036728A /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		823C2B261AC316AA00C6BE63 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		823C2B2C1AC31C3C00C6BE63 /* TaskItModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskItModel.xcdatamodel; sourceTree = "<group>"; };
 		823C2B2E1AC31CF300C6BE63 /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		82E131B91AF6F5B00036728A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				823C2B221AC206F400C6BE63 /* Date.swift */,
 				823C2B201AC1F10400C6BE63 /* TaskDetailViewController.swift */,
 				823C2B241AC20C4F00C6BE63 /* AddTaskViewController.swift */,
+				82E131B91AF6F5B00036728A /* SettingsViewController.swift */,
 				823C2B1C1AC1C8B200C6BE63 /* TaskCell.swift */,
 				823C2B001AC0C6F000C6BE63 /* Main.storyboard */,
 				823C2B2B1AC31C3C00C6BE63 /* TaskItModel.xcdatamodeld */,
@@ -242,6 +245,7 @@
 				823C2B211AC1F10400C6BE63 /* TaskDetailViewController.swift in Sources */,
 				823C2B2F1AC31CF300C6BE63 /* TaskModel.swift in Sources */,
 				823C2B251AC20C4F00C6BE63 /* AddTaskViewController.swift in Sources */,
+				82E131BA1AF6F5B00036728A /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +439,7 @@
 				823C2B181AC0C6F000C6BE63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		823C2B191AC0C6F000C6BE63 /* Build configuration list for PBXNativeTarget "TaskItTests" */ = {
 			isa = XCConfigurationList;
@@ -443,6 +448,7 @@
 				823C2B1B1AC0C6F000C6BE63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

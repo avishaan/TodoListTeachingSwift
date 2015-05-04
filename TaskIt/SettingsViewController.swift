@@ -14,7 +14,10 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
   @IBOutlet weak var completeNewTodoTableView: UITableView!
   @IBOutlet weak var versionLabel: UILabel!
   
+  
   let kVersionNumber = "1.0"
+  let kShouldCapitalizeTaskKey = "shouldCapitalizeTask"
+  let kShouldCompleteNewTodoKey = "completeNewTodo"
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -50,6 +53,39 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
   
   func doneBarButtonItemPressed (barButtonItem: UIBarButtonItem) {
     self.navigationController?.popViewControllerAnimated(true)
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    if tableView == self.capitalizeTableView {
+      // check which tableView is being called
+      // create cel
+      var capitalizeCell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("capitalizeCell") as UITableViewCell
+      // check row
+      if indexPath.row == 0 {
+        // we are in first row
+        capitalizeCell.textLabel?.text = "No do not Capitalize"
+        
+        // if we don't want to capitalize new tasks
+        if NSUserDefaults.standardUserDefaults().boolForKey(kShouldCapitalizeTaskKey) == false {
+          // show a checkmark
+          capitalizeCell.accessoryType = UITableViewCellAccessoryType.Checkmark
+          
+        } else {
+          capitalizeCell.accessoryType = UITableViewCellAccessoryType.None
+        }
+        
+      } else {
+        // indexPath row doesnt equal 1
+        capitalizeCell.textLabel?.text = "Yes, Capitalize!"
+        
+        if NSUserDefaults.standardUserDefaults().boolForKey(kShouldCapitalizeTaskKey) == true {
+          capitalizeCell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        } else {
+          capitalizeCell.accessoryType = UITableViewCellAccessoryType.None
+        }
+      }
+      return capitalizeCell
+    }
   }
   
   

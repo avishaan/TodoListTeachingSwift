@@ -141,6 +141,10 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: kShouldCompleteNewTodoKey)
       }
     }
+    // we need to remember to save
+    NSUserDefaults.standardUserDefaults().synchronize()
+    // reload the data for the tableView
+    tableView.reloadData()
   }
   
 }

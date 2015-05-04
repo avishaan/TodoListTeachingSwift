@@ -107,5 +107,40 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
   }
   
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 2
+  }
+  
+  func  tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    // height for row
+    return 30
+  }
+  
+  func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    if tableView == self.capitalizeTableView {
+      return "Capitalize New Task?"
+    } else {
+      return "Complete New Task"
+    }
+  }
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    // we will set the settings here
+    if tableView == self.capitalizeTableView {
+      // settings for capitalize table view
+      if indexPath.row == 0 {
+        NSUserDefaults.standardUserDefaults().setBool(false, forKey: kShouldCapitalizeTaskKey)
+      } else {
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: kShouldCapitalizeTaskKey)
+      }
+    } else {
+      // settings for complete new todo
+      if indexPath.row == 0{
+        NSUserDefaults.standardUserDefaults().setBool(false, forKey: kShouldCompleteNewTodoKey)
+      } else {
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: kShouldCompleteNewTodoKey)
+      }
+    }
+  }
   
 }

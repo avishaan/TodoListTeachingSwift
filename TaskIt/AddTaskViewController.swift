@@ -37,10 +37,22 @@ class AddTaskViewController: UIViewController {
     let managedObjectContext = appDelegate.managedObjectContext
     let entityDescription = NSEntityDescription.entityForName("TaskModel", inManagedObjectContext: managedObjectContext!)
     let task = TaskModel(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext!)
-    task.task = taskTextField.text
+    
+    // check if the user set autocapitalization in their settings
+    if NSUserDefaults.standardUserDefaults().boolForKey(kShouldCapitalizeTaskKey) == true {
+      task.task = taskTextField.text.capitalizedString
+    } else {
+      task.task = taskTextField.text
+    }
+    // check if the user set autocomplete new task in their settings
+    if NSUserDefaults.standardUserDefaults().boolForKey(kShouldCompleteNewTodoKey) == true {
+      task.completed = true
+    } else {
+      task.completed = false
+    }
+    
     task.subtask = subtaskTextField.text
     task.date = dueDatePicker.date
-    task.completed = false
     
     appDelegate.saveContext()
     

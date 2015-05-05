@@ -8,6 +8,11 @@
 
 import UIKit
 
+// objc is necessary to make optional protocols
+@objc protocol TaskDetailViewControllerDelegate {
+  optional func taskDetailEdited()
+}
+
 class TaskDetailViewController: UIViewController {
   
   var detailTaskModel:TaskModel!
@@ -15,6 +20,8 @@ class TaskDetailViewController: UIViewController {
   @IBOutlet weak var taskTextField: UITextField!
   @IBOutlet weak var subtaskTextField: UITextField!
   @IBOutlet weak var dueDatePicker: UIDatePicker!
+  
+  var delegate:TaskDetailViewControllerDelegate?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -43,6 +50,8 @@ class TaskDetailViewController: UIViewController {
     
     
     self.navigationController?.popViewControllerAnimated(true)
+    // we will set the delegate as the View Controller
+    delegate?.taskDetailEdited!()
   }
   
 }

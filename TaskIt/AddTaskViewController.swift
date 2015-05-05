@@ -9,11 +9,18 @@
 import UIKit
 import CoreData
 
+protocol AddTaskViewControllerDelegate {
+  func addTask(message:String)
+  func addTaskCanceled(message:String)
+}
+
 class AddTaskViewController: UIViewController {
   
   @IBOutlet weak var taskTextField: UITextField!
   @IBOutlet weak var subtaskTextField: UITextField!
   @IBOutlet weak var dueDatePicker: UIDatePicker!
+  
+  var delegate:AddTaskViewControllerDelegate?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,6 +34,7 @@ class AddTaskViewController: UIViewController {
   }
   
   @IBAction func cancelButtonTapped(sender: UIButton) {
+    delegate?.addTaskCanceled("Task was not added")
     // modal transition doesn't have access to navigationController so cant pop
     self.dismissViewControllerAnimated(true, completion: nil)
   }
@@ -67,6 +75,7 @@ class AddTaskViewController: UIViewController {
       println(res)
     }
     
+    delegate?.addTask("Task Added")
     self.dismissViewControllerAnimated(true, completion: nil)
   }
   

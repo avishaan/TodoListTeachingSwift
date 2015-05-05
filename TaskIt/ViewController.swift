@@ -140,7 +140,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   }
   // TaskDetailViewControllerDelegate
   func taskDetailEdited() {
-    // func
+    showAlert()
+  }
+  
+  func showAlert() {
+    var alert = UIAlertController(title: "Change Made!", message: "Congratz", preferredStyle: UIAlertControllerStyle.Alert)
+    alert.addAction(UIAlertAction(title: "Ok!", style: UIAlertActionStyle.Default, handler: nil))
+    self.presentViewController(alert, animated: true, completion: nil)
+    
   }
 
 }

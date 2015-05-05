@@ -34,9 +34,10 @@ class AddTaskViewController: UIViewController {
   }
   
   @IBAction func cancelButtonTapped(sender: UIButton) {
-    delegate?.addTaskCanceled("Task was not added")
     // modal transition doesn't have access to navigationController so cant pop
     self.dismissViewControllerAnimated(true, completion: nil)
+    // must dismiss view controller FIRST before the delegate otherwise this won't work
+    delegate?.addTaskCanceled("Task was not added")
   }
   
   @IBAction func addTaskButtonTapped(sender: UIButton) {
@@ -75,8 +76,9 @@ class AddTaskViewController: UIViewController {
       println(res)
     }
     
-    delegate?.addTask("Task Added")
+    // must dismiss view controller FIRST before the delegate otherwise this won't work
     self.dismissViewControllerAnimated(true, completion: nil)
+    delegate?.addTask("Task Added")
   }
   
 }

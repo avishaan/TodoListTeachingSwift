@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, TaskDetailViewControllerDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, TaskDetailViewControllerDelegate, AddTaskViewControllerDelegate {
 
   @IBOutlet weak var tableView: UITableView!
   
@@ -47,6 +47,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       detailVC.delegate = self
     } else if segue.identifier == "showTaskAdd" {
       let addTaskVC:AddTaskViewController = segue.destinationViewController as AddTaskViewController
+      // make sure to set delegate property
+      addTaskVC.delegate = self
     }
   }
   
@@ -143,8 +145,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     showAlert()
   }
   
-  func showAlert() {
-    var alert = UIAlertController(title: "Change Made!", message: "Congratz", preferredStyle: UIAlertControllerStyle.Alert)
+  // AddTaskViewControllerDelegate
+  func addTaskCanceled(message: String) {
+    showAlert(message: message)
+  }
+  func addTask(message: String) {
+    showAlert(message: message)
+  }
+  
+  // default value of "Congrats"
+  func showAlert(message:String = "Congrats") {
+    var alert = UIAlertController(title: "Change Made!", message: message, preferredStyle: UIAlertControllerStyle.Alert)
     alert.addAction(UIAlertAction(title: "Ok!", style: UIAlertActionStyle.Default, handler: nil))
     self.presentViewController(alert, animated: true, completion: nil)
     

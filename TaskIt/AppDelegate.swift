@@ -9,6 +9,10 @@
 import UIKit
 import CoreData
 
+// global constants avail to all
+let kShouldCapitalizeTaskKey = "shouldCapitalizeTask"
+let kShouldCompleteNewTodoKey = "completeNewTodo"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

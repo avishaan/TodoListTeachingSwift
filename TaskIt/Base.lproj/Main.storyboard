@@ -8,7 +8,7 @@
         <!--Settings View Controller-->
         <scene sceneID="tPp-3P-sWu">
             <objects>
-                <viewController id="yrS-nu-uPq" customClass="SettingsViewController" customModule="TaskIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="yrS-nu-uPq" customClass="SettingsViewController" customModule="TaskIt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ydS-5L-su8"/>
                         <viewControllerLayoutGuide type="bottom" id="prj-om-1x6"/>

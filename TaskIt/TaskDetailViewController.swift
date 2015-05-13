@@ -26,6 +26,9 @@ class TaskDetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    // setup background color
+    self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
+    
     // Do any additional setup after loading the view.
     self.taskTextField.text = detailTaskModel.task
     self.subtaskTextField.text = detailTaskModel.subtask

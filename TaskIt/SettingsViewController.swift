@@ -22,6 +22,9 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // Do any additional setup after loading the view.
     
+    // setup background color
+    self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
+    
     // add both delegate and datasource, alternatively you can do in storyboard
     self.capitalizeTableView.delegate = self
     self.capitalizeTableView.dataSource = self

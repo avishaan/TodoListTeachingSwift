@@ -111,6 +111,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       }
     }
   }
+  func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    // tell cell should be clear when displayed
+    cell.backgroundColor = UIColor.clearColor()
+  }
   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     
     let thisTask = fetchedResultsController.objectAtIndexPath(indexPath) as TaskModel

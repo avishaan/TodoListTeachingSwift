@@ -391,6 +391,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="288" id="8C6-XR-AAL"/>
                                     <constraint firstAttribute="height" constant="30" id="Dyp-Vs-K89"/>
+                                    <constraint firstAttribute="width" constant="659" id="LdI-Kc-Rdk"/>
+                                    <constraint firstAttribute="height" constant="30" id="f1f-1m-lhf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -398,6 +400,8 @@
                                     <mask key="constraints">
                                         <exclude reference="8C6-XR-AAL"/>
                                         <exclude reference="Dyp-Vs-K89"/>
+                                        <exclude reference="LdI-Kc-Rdk"/>
+                                        <exclude reference="f1f-1m-lhf"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -406,34 +410,54 @@
                                         <include reference="Dyp-Vs-K89"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="183" y="91" width="659" height="30"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="LdI-Kc-Rdk"/>
+                                        <include reference="f1f-1m-lhf"/>
+                                    </mask>
                                 </variation>
                             </textField>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZxE-oR-7F8">
                                 <rect key="frame" x="-4" y="234" width="329" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="bRR-Bx-qeJ"/>
+                                    <constraint firstAttribute="width" constant="659" id="tNh-N5-Z3i"/>
+                                </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="448917951.07477802">
                                     <!--2015-03-24 19:25:51 +0000-->
                                 </date>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="bRR-Bx-qeJ"/>
+                                        <exclude reference="tNh-N5-Z3i"/>
+                                    </mask>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="30" y="234" width="260" height="162"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="183" y="242" width="659" height="162"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="bRR-Bx-qeJ"/>
+                                        <include reference="tNh-N5-Z3i"/>
+                                    </mask>
                                 </variation>
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Subtask" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zkh-Rf-h7C">
                                 <rect key="frame" x="12" y="160" width="288" height="30"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="659" id="EkA-Vw-1WB"/>
                                     <constraint firstAttribute="height" constant="30" id="QrE-LL-xOB"/>
                                     <constraint firstAttribute="width" constant="288" id="SYe-Nb-7Oc"/>
+                                    <constraint firstAttribute="height" constant="30" id="hHH-UK-bMc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="EkA-Vw-1WB"/>
                                         <exclude reference="QrE-LL-xOB"/>
                                         <exclude reference="SYe-Nb-7Oc"/>
+                                        <exclude reference="hHH-UK-bMc"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -442,28 +466,43 @@
                                         <include reference="SYe-Nb-7Oc"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="183" y="161" width="659" height="30"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="EkA-Vw-1WB"/>
+                                        <include reference="hHH-UK-bMc"/>
+                                    </mask>
                                 </variation>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="zkh-Rf-h7C" secondAttribute="centerX" id="CXh-2H-7Hp"/>
+                            <constraint firstItem="X9r-mk-cW8" firstAttribute="top" secondItem="3XP-vE-1SE" secondAttribute="bottom" constant="27" id="IgH-ec-GIQ"/>
                             <constraint firstAttribute="centerX" secondItem="ZxE-oR-7F8" secondAttribute="centerX" id="LQ6-Of-gv8"/>
                             <constraint firstAttribute="centerX" secondItem="X9r-mk-cW8" secondAttribute="centerX" id="Mdy-cn-6hV"/>
+                            <constraint firstItem="ZxE-oR-7F8" firstAttribute="top" secondItem="zkh-Rf-h7C" secondAttribute="bottom" constant="51" id="Xh9-LP-TkH"/>
+                            <constraint firstAttribute="centerX" secondItem="zkh-Rf-h7C" secondAttribute="centerX" constant="-0.5" id="aFy-QZ-iWc"/>
                             <constraint firstItem="zkh-Rf-h7C" firstAttribute="top" secondItem="X9r-mk-cW8" secondAttribute="bottom" constant="38" id="cj6-tG-ryA"/>
+                            <constraint firstAttribute="centerX" secondItem="X9r-mk-cW8" secondAttribute="centerX" constant="-0.5" id="hKk-gf-WYZ"/>
                             <constraint firstItem="ZxE-oR-7F8" firstAttribute="top" secondItem="zkh-Rf-h7C" secondAttribute="bottom" constant="45" id="sAU-rn-M1x"/>
+                            <constraint firstItem="zkh-Rf-h7C" firstAttribute="top" secondItem="X9r-mk-cW8" secondAttribute="bottom" constant="40" id="tRA-rB-pWf"/>
+                            <constraint firstAttribute="centerX" secondItem="ZxE-oR-7F8" secondAttribute="centerX" constant="-0.5" id="vVI-e6-525"/>
                             <constraint firstItem="X9r-mk-cW8" firstAttribute="top" secondItem="3XP-vE-1SE" secondAttribute="bottom" constant="27" id="yWk-2b-ZkO"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="IgH-ec-GIQ"/>
                                 <exclude reference="Mdy-cn-6hV"/>
+                                <exclude reference="hKk-gf-WYZ"/>
                                 <exclude reference="yWk-2b-ZkO"/>
                                 <exclude reference="CXh-2H-7Hp"/>
+                                <exclude reference="aFy-QZ-iWc"/>
                                 <exclude reference="cj6-tG-ryA"/>
+                                <exclude reference="tRA-rB-pWf"/>
                                 <exclude reference="LQ6-Of-gv8"/>
+                                <exclude reference="Xh9-LP-TkH"/>
                                 <exclude reference="sAU-rn-M1x"/>
+                                <exclude reference="vVI-e6-525"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -474,6 +513,16 @@
                                 <include reference="cj6-tG-ryA"/>
                                 <include reference="LQ6-Of-gv8"/>
                                 <include reference="sAU-rn-M1x"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="IgH-ec-GIQ"/>
+                                <include reference="hKk-gf-WYZ"/>
+                                <include reference="aFy-QZ-iWc"/>
+                                <include reference="tRA-rB-pWf"/>
+                                <include reference="Xh9-LP-TkH"/>
+                                <include reference="vVI-e6-525"/>
                             </mask>
                         </variation>
                     </view>
